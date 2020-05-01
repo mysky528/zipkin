@@ -8,7 +8,9 @@
     "test": "node node_modules/karma/bin/karma start --single-run",
     "test-watch": "node node_modules/karma/bin/karma start",
     "lint": "node node_modules/eslint/bin/eslint js test",
-    "build": "node node_modules/webpack/bin/webpack.js --bail --optimize-minimize --optimize-occurrence-order --optimize-dedupe"
+    "build": "node node_modules/webpack/bin/webpack.js --bail --optimize-minimize --optimize-occurrence-order --optimize-dedupe",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "author": "https://gitter.im/openzipkin/zipkin",
   "repository": {
@@ -23,12 +25,13 @@
     "crossroads": "^0.12.2",
     "d3": "^3.5.14",
     "flightjs": "^1.5.2",
-    "jquery": "^2.2.0",
+    "jquery": "^3.5.0",
     "js-cookie": "^2.1.0",
     "lodash": "^4.5.0",
     "moment": "^2.11.2",
     "query-string": "^3.0.0",
-    "timeago": "^1.5.1"
+    "timeago": "^1.5.1",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "babel-core": "^6.4.5",
@@ -60,5 +63,6 @@
     "style-loader": "^0.13.0",
     "webpack": "^1.12.12",
     "webpack-dev-server": "^1.14.1"
-  }
+  },
+  "snyk": true
 }
